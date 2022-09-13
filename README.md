@@ -25,6 +25,6 @@ Movie application created with TMDB API, Architecture Components, Android Jetpac
 •	[Material](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)-Components - Material design components like ripple animation, cardView.<br/>
 
 # License  :page_with_curl:<br/>
-MovieApp is available under the Apache  license. See the [LICENSE](https://github.com/ahmetufan/MovieApp/new/main) file for more info.
+MovieApp is available under the MIT  license. See the [LICENSE](https://github.com/ahmetufan/HistorialApp/edit/master/README.md) file for more info.
 
 
