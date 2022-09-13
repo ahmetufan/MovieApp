@@ -8,6 +8,8 @@ import com.ahmet.movieapp.databinding.RowMain2Binding
 import com.ahmet.movieapp.models.Popular
 import com.ahmet.movieapp.ui.HomeFragmentDirections
 import com.ahmet.movieapp.ui.Type
+import com.ahmet.movieapp.utils.downloadFromUrl
+import com.ahmet.movieapp.utils.placeHolderProgressBar
 import com.bumptech.glide.Glide
 
 class PopularAdaptor(private val popularList: ArrayList<Popular>) :
@@ -24,9 +26,8 @@ class PopularAdaptor(private val popularList: ArrayList<Popular>) :
         holder.binding.rowTitle.text = popularList[position].title
         holder.binding.rowAverage.text = popularList[position].vote_average.toString()
 
-        Glide.with(holder.itemView.context)
-            .load("https://image.tmdb.org/t/p/w500" + popularList[position].poster_path)
-            .into(holder.binding.rowImage)
+        holder.binding.rowImage.downloadFromUrl(popularList[position].poster_path,
+            placeHolderProgressBar(holder.itemView.context))
 
         holder.binding.linearPopular.setOnClickListener {
             val action=HomeFragmentDirections.actionHomeFragmentToDetailFragment(popularList[position].id,Type.Populer.ordinal)

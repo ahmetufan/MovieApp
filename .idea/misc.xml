@@ -4,16 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_back.xml" value="0.1935" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_back_search.xml" value="0.1935" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_star.xml" value="0.1935" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_wavedetails.xml" value="0.1935" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/layout_border.xml" value="0.1935" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/round_border.xml" value="0.1935" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_search.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_home.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_home.xml" value="0.15" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_search.xml" value="0.21" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_2.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_main.xml" value="0.22" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_main2.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_main2.xml" value="0.25" />
+        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_search.xml" value="0.25" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/MovieApp/app/src/main/res/layout/row_vertical.xml" value="0.25" />
       </map>
     </option>

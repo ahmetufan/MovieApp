@@ -9,8 +9,10 @@ import javax.inject.Inject
 
 class ApiServiceRepository @Inject constructor(private val apiService: ApiService) {
 
+
+
     fun getDataService(): Single<MovieResponse> {
-        return apiService.getMovies("d98c5041b9385334b1843046ff779213","tr")
+        return apiService.getMovies("d98c5041b9385334b1843046ff779213",5,"tr")
     }
 
     fun getPopularService():Single<PopularResponse> {

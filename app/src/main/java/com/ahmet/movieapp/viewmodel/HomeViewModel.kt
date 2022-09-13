@@ -2,9 +2,12 @@ package com.ahmet.movieapp.viewmodel
 
 import android.app.Application
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import com.ahmet.movieapp.models.*
 import com.ahmet.movieapp.service.db.DaoRepository
+import com.ahmet.movieapp.service.db.MovieDatabase
 import com.ahmet.movieapp.service.retrofit.ApiServiceRepository
 import com.ahmet.movieapp.utils.CustomSharedPreferences
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,13 +28,20 @@ class HomeViewModel @Inject constructor(
     private val compositeDisposable = CompositeDisposable()
 
     private var customPreferences = CustomSharedPreferences(getApplication())
-    private var refreshTime = 20 * 60 * 1000 * 1000 * 1000L
+    private var refreshTime = 10 * 60 * 1000 * 1000 * 1000L
+
 
     val moviedata = MutableLiveData<List<Movie>>()
 
     val popularData = MutableLiveData<List<Popular>>()
 
     val nowPlayingData = MutableLiveData<List<Now>>()
+
+    fun refreshData(){
+        getDataFromAPI()
+        getDataPopularFromAPI()
+        getDataNowFromAPI()
+    }
 
 
     fun getLiveData() {
@@ -63,6 +73,11 @@ class HomeViewModel @Inject constructor(
         } else {
             getDataNowFromAPI()
         }
+    }
+
+    fun searchDatabse(search:String):LiveData<List<Movie>>{
+        val searchDao=dbRepository.searchDatabaseMovie(search)
+        return searchDao.asLiveData()
     }
 
 

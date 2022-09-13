@@ -9,6 +9,8 @@ import com.ahmet.movieapp.models.Now
 import com.ahmet.movieapp.models.Popular
 import com.ahmet.movieapp.ui.HomeFragmentDirections
 import com.ahmet.movieapp.ui.Type
+import com.ahmet.movieapp.utils.downloadFromUrl
+import com.ahmet.movieapp.utils.placeHolderProgressBar
 import com.bumptech.glide.Glide
 
 
@@ -26,9 +28,8 @@ class NowAdapter(private val nowList: ArrayList<Now>) : RecyclerView.Adapter<Now
         holder.binding.rowAverage.text = nowList[position].vote_average.toString()
         holder.binding.rowRelease.text=nowList[position].release_date
 
-        Glide.with(holder.itemView.context)
-            .load("https://image.tmdb.org/t/p/w500" + nowList[position].poster_path)
-            .into(holder.binding.rowImage)
+        holder.binding.rowImage.downloadFromUrl(nowList[position].poster_path,
+            placeHolderProgressBar(holder.itemView.context))
 
         holder.binding.linearNow.setOnClickListener {
             val action=HomeFragmentDirections.actionHomeFragmentToDetailFragment(nowList[position].id,Type.Now.ordinal)

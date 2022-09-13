@@ -12,6 +12,7 @@ class DaoRepository @Inject constructor(private val dao:MovieDeo) {
     suspend fun getMovieId(id:Int) = dao.getMovieId(id)
     suspend fun insertAll(movies:Array<Movie>) = dao.insertAll(movies)
     suspend fun deleteMovies() = dao.deleteMovies()
+    fun searchDatabaseMovie(search:String)=dao.searchDatabaseMovie(search)
 
 
     suspend fun getAllPopular()=dao.getAllPopular()

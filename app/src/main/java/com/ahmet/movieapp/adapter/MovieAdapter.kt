@@ -8,6 +8,8 @@ import com.ahmet.movieapp.databinding.RowMainBinding
 import com.ahmet.movieapp.models.Movie
 import com.ahmet.movieapp.ui.HomeFragmentDirections
 import com.ahmet.movieapp.ui.Type
+import com.ahmet.movieapp.utils.downloadFromUrl
+import com.ahmet.movieapp.utils.placeHolderProgressBar
 import com.bumptech.glide.Glide
 
 class MovieAdapter(private val movieList:ArrayList<Movie>):RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
@@ -22,12 +24,10 @@ class MovieAdapter(private val movieList:ArrayList<Movie>):RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.binding.rowTitle.text=movieList[position].title
-        //holder.binding.rowRelease.text=movieList[position].release_date
         holder.binding.rowAverage.text=movieList[position].vote_average.toString()
 
-        Glide.with(holder.itemView.context)
-            .load("https://image.tmdb.org/t/p/w500"+ movieList[position].poster_path)
-            .into(holder.binding.rowImage)
+        holder.binding.rowImage.downloadFromUrl(movieList[position].poster_path,
+            placeHolderProgressBar(holder.itemView.context))
 
         holder.binding.linearMovie.setOnClickListener {
 

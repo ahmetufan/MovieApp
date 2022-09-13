@@ -14,6 +14,7 @@ interface ApiService {
     @GET("3/movie/top_rated")
     fun getMovies(
         @Query("api_key") apikey: String,
+        @Query("page") page:Int,
         @Query("language") language: String
     ): Single<MovieResponse>
 

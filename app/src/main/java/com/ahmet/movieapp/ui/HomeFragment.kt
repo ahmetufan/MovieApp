@@ -1,6 +1,8 @@
 package com.ahmet.movieapp.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ahmet.movieapp.BuildConfig
 import com.ahmet.movieapp.R
 import com.ahmet.movieapp.adapter.MovieAdapter
 import com.ahmet.movieapp.adapter.NowAdapter
@@ -28,6 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var popularAdaptor: PopularAdaptor
     private lateinit var nowAdapter: NowAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,11 +59,29 @@ class HomeFragment : Fragment() {
 
         viewModel.getNowPlayingLiveData()
 
+        swipeRefresh()
+
         initRecycler()
 
         observeLiveData()
 
+
+        binding.ikonSearch.setOnClickListener{
+            val action=HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+
     }
+
+    private fun swipeRefresh() {
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.refreshData()
+            binding.swipeRefreshLayout.isRefreshing=false
+        }
+    }
+
 
     private fun observeLiveData() {
 
@@ -87,17 +110,27 @@ class HomeFragment : Fragment() {
 
     private fun initRecycler() {
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         movieAdapter = MovieAdapter(arrayListOf())
         binding.recyclerView.adapter = movieAdapter
+        binding.recyclerView.set3DItem(true)
+        binding.recyclerView.setAlpha(true)
+        binding.recyclerView.setInfinite(true)
 
-        binding.popularRecyclerView.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        popularAdaptor= PopularAdaptor(arrayListOf())
-        binding.popularRecyclerView.adapter=popularAdaptor
 
-        binding.nowRecyclerView.layoutManager=LinearLayoutManager(context)
-        nowAdapter= NowAdapter(arrayListOf())
-        binding.nowRecyclerView.adapter=nowAdapter
+
+        binding.popularRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        popularAdaptor = PopularAdaptor(arrayListOf())
+        binding.popularRecyclerView.adapter = popularAdaptor
+        binding.popularRecyclerView.set3DItem(true)
+        binding.popularRecyclerView.setAlpha(true)
+        binding.popularRecyclerView.setInfinite(true)
+
+        binding.nowRecyclerView.layoutManager = LinearLayoutManager(context)
+        nowAdapter = NowAdapter(arrayListOf())
+        binding.nowRecyclerView.adapter = nowAdapter
 
     }
 

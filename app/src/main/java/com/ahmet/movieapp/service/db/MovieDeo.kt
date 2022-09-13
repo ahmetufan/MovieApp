@@ -7,6 +7,7 @@ import androidx.room.Query
 import com.ahmet.movieapp.models.Movie
 import com.ahmet.movieapp.models.Now
 import com.ahmet.movieapp.models.Popular
+import java.util.concurrent.Flow
 
 @Dao
 interface MovieDeo {
@@ -23,6 +24,9 @@ interface MovieDeo {
 
     @Query("DELETE FROM movie")
     suspend fun deleteMovies()
+
+    @Query("SELECT * FROM movie WHERE title LIKE :search")
+    fun searchDatabaseMovie(search:String):kotlinx.coroutines.flow.Flow<List<Movie>>
 
     //Popular
     @Query("SELECT * FROM popular")
