@@ -15,7 +15,7 @@ Movie application created with TMDB API, Architecture Components, Android Jetpac
 •	[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - UI related data holder, lifecycle aware.<br/>
 • [Dependency injection-Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project.<br/> 
 •	[Navigation](https://developer.android.com/guide/navigation) Component - handle everything needed for in-app navigation.<br/>
-•	[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - UI related data holder, lifecycle aware.<br/>
+•	[View Binding](https://developer.android.com/topic/libraries/view-binding) - View binding is a feature that allows you to more easily write code that interacts with views.<br/>
 •	[Room](https://developer.android.com/jetpack/androidx/releases/room) - Used for persistance in a SQLite database<br/>
 •	[Retrofit](https://square.github.io/retrofit/) - Used to simplify networking<br/>
 •	[RxJava](https://www.geeksforgeeks.org/rxjava-for-android/) - RxJava simplifies complex threading operations, maintaining proper synchronization as you switch seamlessly from thread to thread.<br/>
