@@ -24,3 +24,7 @@ Movie application created with TMDB API, Architecture Components, Android Jetpac
 •	[Glide](https://github.com/bumptech/glide) - An image loading and caching library for Android focused on smooth scrolling<br/>
 •	[Material](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)-Components - Material design components like ripple animation, cardView.<br/>
 
+# License  :page_with_curl:<br/>
+MovieApp is available under the Apache  license. See the [LICENSE](https://github.com/ahmetufan/MovieApp/new/main) file for more info.
+
+
